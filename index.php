@@ -61,6 +61,13 @@ if(!isset($_SESSION['user'])){
 
     <div class="container">
 
+      <?php
+      if(isset($_SESSION['info'])){
+        echo '<div class="alert alert-success">'.$_SESSION['info'].'</div>';
+        unset($_SESSION['info']);
+      }
+      ?>
+
     <table class="table table-stripped">
       <thead>
         <tr>

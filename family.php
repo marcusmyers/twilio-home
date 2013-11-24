@@ -61,6 +61,13 @@ require 'voicemail/messages.php';
 
     <div class="container">
 
+      <?php
+      if(isset($_SESSION['info'])){
+        echo '<div class="alert alert-success">'.$_SESSION['info'].'</div>';
+        unset($_SESSION['info']);
+      }
+      ?>
+
     <table class="table table-stripped">
       <thead>
         <tr>
@@ -75,7 +82,7 @@ require 'voicemail/messages.php';
     $mids = getMessages('1234');
     foreach($mids as $id){
       $mess = getMessage($id);
-      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio>&nbsp;&nbsp;<a href='/delete.php?id=".$mess['id']."' class='btn btn-danger'><i class='glyphicon glyphicon-remove'></i></a></td></tr>\n";
+      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio>&nbsp;&nbsp;<a href='/delete.php?id=".$mess['id']."&r=family' class='btn btn-danger'><i class='glyphicon glyphicon-remove'></i></a></td></tr>\n";
     }
 
     ?>

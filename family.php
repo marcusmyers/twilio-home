@@ -47,6 +47,14 @@ require 'voicemail/messages.php';
             <li><a href="/index.php">Home</a></li>
             <li class="active"><a href="/family.php">House VMs</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user['desc']; ?> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/logout.php">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>

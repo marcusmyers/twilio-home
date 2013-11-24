@@ -27,6 +27,12 @@
 
     <div class="container">
 
+      <?php
+      if(isset($_SESSION['error'])){
+        echo '<div class="alert alert-danger">'.$_SESSION['error'].'</div>'
+      }
+      ?>
+
       <form class="form-signin" method="post" action="/signin.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="form-control" placeholder="Email address" name="email" required autofocus>

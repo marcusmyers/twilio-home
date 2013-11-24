@@ -30,6 +30,32 @@ function getMailbox($voicemail_exten) {
   return $mailbox;
 }
 
+function getMailboxWithAuth($email,$pass) {
+  global $db_name, $db_host,$db_user,$db_passwd;
+  
+  mysql_connect($db_host, $db_user, $db_passwd)
+    or die('Could not connect: ' . mysql_error());
+
+  mysql_select_db($db_name) or die('Could not select database');
+  //make sure inputs are db safe
+  $email = mysql_real_escape_string($email);
+  $pass = base64_encode('vbx'.$pass);
+  // Performing SQL query
+  $query = sprintf("select * from voicemailbox where vmb_email='%s' AND password='%s'",$email, $pass);
+  $result = mysql_query($query) or die('Query failed: ' . mysql_error());
+  
+  $mailbox = false;
+  if ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    $mailbox = array();
+    $mailbox['exten'] = $line['vmb_extension'];
+    $mailbox['desc'] = $line['vmb_description'];
+    $mailbox['passcode'] = $line['vmb_passcode'];
+    $mailbox['email'] = $line['vmb_email'];
+  }
+  mysql_close();
+  return $mailbox;
+}
+
 function addMessage($voicemail_exten, $caller_id, $recording_url) {
   global $db_name, $db_host,$db_user,$db_passwd;
 

@@ -4,6 +4,7 @@ if(!isset($_SESSION['user'])){
 } else {
   $user = $_SESSION['user'];
 }
+require 'voicemail/messages.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +52,26 @@ if(!isset($_SESSION['user'])){
 
     <div class="container">
 
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>From</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+    <?php
 
+    $mids = getMessages('1234');
+    foreach($mids as $id){
+      $mess = getMessage($id);
+      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio></td></tr>\n";
+    }
+
+    ?>
+      </tbody>
+    </table>
     </div> <!-- /container -->
 
 

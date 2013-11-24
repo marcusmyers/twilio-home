@@ -61,9 +61,7 @@ if(!isset($_SESSION['user'])){
 
     <div class="container">
 
-  <?php
-    var_dump($user);
-  ?>
+  
     </div> <!-- /container -->
 
 

@@ -75,7 +75,7 @@ require 'voicemail/messages.php';
     $mids = getMessages('1234');
     foreach($mids as $id){
       $mess = getMessage($id);
-      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio></td></tr>\n";
+      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio><a href='/delete.php?id=".$mess['id']."'><i class='glyphicon glyphicon-remove'></i></a></td></tr>\n";
     }
 
     ?>

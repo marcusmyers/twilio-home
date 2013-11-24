@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_POST)){
+if(sizeof($_POST) == 0){
 	header('Location: index.php');
 } else {
 	var_dump($_POST);

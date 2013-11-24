@@ -72,7 +72,7 @@ function addMessage($voicemail_exten, $caller_id, $recording_url) {
 
   $query = sprintf("insert into messages (message_frn_vmb_extension,"
                  . "message_date,message_from,message_audio_url,message_flag)"
-                 . " values ('%s',now(),'%s','%s',0)", $voicemail_exten, $caller_id,
+                 . " values ('%s','%s','%s','%s',0)", $voicemail_exten, date('Y-m-d H:i:s'), $caller_id,
                  $recording_url);
 
   mysql_query($query) or die('Query failed: ' . mysql_error());

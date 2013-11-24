@@ -61,7 +61,27 @@ if(!isset($_SESSION['user'])){
 
     <div class="container">
 
-  
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>From</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+    <?php
+
+    $mids = getMessages($user['exten']);
+    foreach($mids as $id){
+      $mess = getMessage($id);
+      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio></td></tr>\n";
+    }
+
+    ?>
+      </tbody>
+    </table>
+
     </div> <!-- /container -->
 
 

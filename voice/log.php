@@ -17,7 +17,7 @@ mysql_select_db($db_name) or die('Could not select database');
 $caller_id = mysql_real_escape_string($caller_id);
 // Performing SQL query
 
-$query = sprintf("insert into log ( call_from, logged_at) values ('%s',now())", $caller_id);
+$query = sprintf("insert into log ( call_from, logged_at) values ('%s','%s')", $caller_id, date('Y-m-d H:i:s'));
 
 mysql_query($query) or die('Query failed: ' . mysql_error());
 $id = mysql_insert_id();

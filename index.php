@@ -75,7 +75,7 @@ if(!isset($_SESSION['user'])){
     $mids = getMessages($user['exten']);
     foreach($mids as $id){
       $mess = getMessage($id);
-      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio><a href='/delete.php?id=".$mess['id']."'><i class='glyphicon glyphicon-remove'></i></a></td></tr>\n";
+      echo "<tr><td>".$mess['date']."</td><td>".$mess['from']."</td><td><audio controls src='".$mess['url']."' preload='auto'></audio>&nbsp;&nbsp;<a href='/delete.php?id=".$mess['id']."' class='btn btn-danger'><i class='glyphicon glyphicon-remove'></i></a></td></tr>\n";
     }
 
     ?>

@@ -18,6 +18,7 @@ if(!isset($_SESSION['user'])){
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,7 +49,7 @@ if(!isset($_SESSION['user'])){
         
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user->desc; ?> <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user['desc']; ?> <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="/logout.php">Logout</a></li>
               </ul>
@@ -59,11 +60,6 @@ if(!isset($_SESSION['user'])){
     </div>
 
     <div class="container">
-
-<?php 
-
-var_dump($user);
-?>
 
     </div> <!-- /container -->
 

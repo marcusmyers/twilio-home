@@ -4,6 +4,8 @@ if(!isset($_SESSION['user'])){
 } else {
   $user = $_SESSION['user'];
 }
+
+require 'voicemail/messages.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

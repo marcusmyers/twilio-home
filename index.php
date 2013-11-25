@@ -5,7 +5,7 @@ if(!isset($_SESSION['user'])){
   $user = $_SESSION['user'];
 }
 
-require '../../messages.php';
+require '/var/messages.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -46,7 +46,6 @@ if(!isset($_SESSION['user'])){
             <li class="active"><a href="/index.php">Home</a></li>
             <li><a href="/family.php">House VMs</a></li>
           </ul>
-        
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $user['desc']; ?> <b class="caret"></b></a>

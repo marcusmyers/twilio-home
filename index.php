@@ -5,7 +5,7 @@ if(!isset($_SESSION['user'])){
   $user = $_SESSION['user'];
 }
 
-require '/var/messages.php';
+require 'voicemail/messages.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

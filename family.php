@@ -61,6 +61,10 @@ require 'voicemail/messages.php';
 
     <div class="container">
 
+      <div class="page-header">
+        <h1>House Voicemail <small></small></h1>
+      </div>
+
       <?php
       if(isset($_SESSION['info'])){
         echo '<div class="alert alert-success">'.$_SESSION['info'].'</div>';

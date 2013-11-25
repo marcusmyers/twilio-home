@@ -60,6 +60,10 @@ if(!isset($_SESSION['user'])){
     </div>
 
     <div class="container">
+      <div class="page-header">
+        <h1>Personal Voicemail <small></small></h1>
+      </div>
+
 
       <?php
       if(isset($_SESSION['info'])){

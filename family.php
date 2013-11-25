@@ -68,7 +68,7 @@ require 'voicemail/messages.php';
       }
       ?>
 
-    <table class="table table-stripped">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>Date</th>

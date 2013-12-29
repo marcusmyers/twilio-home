@@ -22,7 +22,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   <Redirect method="GET">http://openvbx.emoxter.com/voicemail/leave_a_message.php?exten=1000</Redirect>
   <?php } else { ?>
   <Dial>+14199574216</Dial>
-  <Say>The call failed or the remote party hung up. Goodbye.</Say>
+  <Redirect method="GET">http://openvbx.emoxter.com/voicemail/leave_a_message.php?exten=1000</Redirect>
   <?php  } 
  } elseif ($_REQUEST['Digits'] == '3') { ?>
   <Redirect method="GET">http://openvbx.emoxter.com/voicemail/leave_a_message.php?exten=1234</Redirect>
